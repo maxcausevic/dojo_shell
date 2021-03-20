@@ -1,0 +1,36 @@
+>>> Dojo.objects.create(name = "Dojo_north", city = "Chicago", state = "Illinois")
+<Dojo: Dojo object (4)>
+>>> Dojo.objects.create(name = "Dojo_south", city = "Austin", state = "Texas")
+<Dojo: Dojo object (5)>
+>>> Dojo.objects.create(name = "Dojo_West", city = "Los Angeles", state = "California")
+<Dojo: Dojo object (6)>
+>>> Dojo.objects.get(id=1)
+<Dojo: Dojo object (1)>
+>>> c = Dojo.objects.objects.get(id=2)
+>>> Dojo.objects.get(id=2)
+<Dojo: Dojo object (2)>
+>>> c.delete()
+ Dojo.objects.all()
+<QuerySet [<Dojo: Dojo object (4)>, <Dojo: Dojo object (5)>, <Dojo: Dojo object (6)>]>
+ maxine = Ninja.objects.create(dojo_id = Dojo.objects.get(id=4), first_name= "Maxine", last_name= "Causevic")
+>>> robert = Ninja.objects.create(dojo_id = Dojo.objects.get(id=4), first_name= "Robert", last_name= "Chaikouang")
+>>> christine = Ninja.objects.create(dojo_id = Dojo.objects.get(id=4), first_name= "Christine", last_name= "Chaikouang")
+>>> Ninja.objects.all()
+ tyrion = Ninja.objects.create(dojo_id = Dojo.objects.get(id=5), first_name= "Tyrion", last_name= "Lannister")
+>>> cersei = Ninja.objects.create(dojo_id = Dojo.objects.get(id=5), first_name= "Cersei", last_name= "Lannister")
+>>> jamie = Ninja.objects.create(dojo_id = Dojo.objects.get(id=5), first_name= "Jamie", last_name= "Lannister")
+>>> mickey = Ninja.objects.create(dojo_id = Dojo.objects.get(id=6), first_name= "Mickey", last_name= "Mouse")
+>>> minnie = Ninja.objects.create(dojo_id = Dojo.objects.get(id=6), first_name= "Minnie", last_name= "Mouse")
+>>> donald = Ninja.objects.create(dojo_id = Dojo.objects.get(id=6), first_name= "Donald", last_name= "Duck")
+>>> Dojo.objects.get(id=4)
+Dojo.objects.get(id=4).__dict__
+Dojo.objects.all().values()
+ninjas = Ninja.objects.filter(dojo_id=Dojo.objects.get(id=4))
+print(ninjas)
+ninjas = Ninja.objects.filter(dojo_id=Dojo.objects.get(id=6))
+last_ninja = Ninja.objects.last()
+>>> print (last_ninja)
+Ninja object (9)
+from dojos.models import *
+>>> Dojo.objects.create(name = "Dojo_East", city = "New York City", state = "New York")
+<Dojo: Dojo object (7)>

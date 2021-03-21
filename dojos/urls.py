@@ -3,4 +3,6 @@ from . import views	# the . indicates that the views file can be found in the sa
                     
 urlpatterns = [
     path('', views.index),
+    path('dojos', views.dojos),
+    path('ninjas', views.ninjas)
 ]
